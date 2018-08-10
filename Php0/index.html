@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel='stylesheet' href="CSS/bootstrap.min.css">
+         <link rel='stylesheet' href="CSS/inicioAlumno.css">
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/inicioAlumno.js"></script> 
+        <script>
+     $(document).ready(function(){
+        /* 
+         $('form').submit(function(){
+          $("#carga").toggle(false); 
+            
+          $("#carga").toggle(true);   
+          return false;
+         });
+         
+         $("#parar").click(function(){
+             var a=$('form .btn'); 
+          $("#carga").toggle(false);                      
+         
+    }); */
+         
+     });
+        </script> 
+     
+    
+    </head>
+    <body>
+        <header>
+                <nav class="navbar navbar-default " >
+                    <div class="navbar-header">
+                        <!-- Id navegacion  debe coincidir con el nombre id de abajo-->
+                        <button class="navbar-toggle" data-toggle="collapse" data-target="#navegacion">
+                            <!-- Mostrar en dispositivos de lectura que no reconocen los iconens-->
+                            <span class="sr-only">Mostrar Navegacion</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand">COLEGIO</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navegacion">
+                        <!-- Fijar el atributo role-->
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Alumno</a></li>
+                            <li><a href="inicioProfesor">Profesor</a></li>
+                            <li><a href="publicarR.php">Usuario</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!--Ubicacion dEL USUARIO de  nuestra paginA-->
+            <div class="container">           
+                <div class="row col-md-6">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html">Intranet</a></li>
+                        <li class=""><strong> Consulta Notas</strong></li>
+                    </ol>           
+                    <!--Iniciar Session de un alumno -->
+                    <form class="form-horizontal" action="index.php" method="POST" >
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">CodAlumno</label>
+                            <div  class="col-sm-6"><input class="form-control" placeholder="Usuario Alumno" type="text" name="id" required  pattern="[0-9]{4}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">Password</label>
+                            <div class="col-sm-6"> <input class="form-control" placeholder="Password" type="password" name="password" required></div>                          
+                        </div> 
+                        <div class="form-group">
+
+                            <!--Desplaza una columana offset -->
+                            <div class="col-xs-offset-1">
+                                
+                                 <button class="btn btn-success">Enviar</button>                  
+                                 
+                                 <div style="display: inline-block">  <div style="display: none" id="carga"> <span class="preloader1" ></span></div></div>
+                                 
+                             </div>
+                        </div>    
+                     </form>
+                    <div class="text-center">
+                        <div id="rpta" style="display: inline-block"></div>
+                    </div>
+                </div>
+                
+            </div>
+    </body>
+</html>
